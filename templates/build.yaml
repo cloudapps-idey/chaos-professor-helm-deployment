@@ -1,14 +1,14 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: {{ include "hpa-demo.fullname" . }}
+  name: {{ include "chaos-professor.fullname" . }}
   labels:
-{{ include "hpa-demo.labels" . | indent 4 }}
+{{ include "chaos-professor.labels" . | indent 4 }}
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: "{{ include "hpa-demo.fullname" . }}:latest"
+      name: "{{ include "chaos-professor.fullname" . }}:latest"
   source:
     contextDir: "{{ .Values.source_repository.context_dir }}"
     git:
