@@ -24,8 +24,6 @@ spec:
         name: redhat-openjdk18-openshift:1.4
     type: Source
   triggers:
-  - imageChange:
-      type: ImageChange
   - type: ConfigChange
   - type: GitHub
     github:

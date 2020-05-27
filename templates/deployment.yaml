@@ -5,6 +5,8 @@ metadata:
   labels:
 {{ include "hpa-demo.labels" . | indent 4 }}
 spec:
+  strategy:
+    type: Rolling
   replicas: {{ .Values.replicaCount }}
   selector:
     app.kubernetes.io/name: {{ include "hpa-demo.name" . }}
@@ -26,8 +28,6 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       terminationGracePeriodSeconds: 60
-      strategy:
-        type: Rolling
       containers:
         - name: {{ .Chart.Name }}
           image: "helm/{{ include "hpa-demo.fullname" . }}"
