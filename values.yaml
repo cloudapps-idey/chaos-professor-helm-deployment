@@ -6,7 +6,7 @@ replicaCount: 1
 
 source_repository:
   ref: "master"
-  uri: "https://github.com/ConSol/chaos-professor.git"
+  uri: "https://github.com/cloudapps-idey/chaos-professor.git"
   context_dir: ""
 
 nameOverride: ""
